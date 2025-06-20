@@ -1,0 +1,86 @@
+{
+  "id": "scene-001",
+  "name": "Forest Entrance",
+  "description": "Character enters a mysterious forest at dusk",
+  "duration": 15.5,
+  "elements": [
+    {
+      "id": "char-001",
+      "type": "character",
+      "name": "Protagonist",
+      "position": {"x": 0.5, "y": 0.6, "z": 0.0},
+      "appearance": {
+        "costume": "hiking_outfit",
+        "props": ["backpack", "flashlight"]
+      },
+      "actions": [
+        {"time": 0.0, "description": "Approaches forest edge"},
+        {"time": 5.2, "description": "Looks into the darkness"},
+        {"time": 10.1, "description": "Takes a deep breath and steps forward"}
+      ]
+    },
+    {
+      "id": "env-001",
+      "type": "environment",
+      "name": "Forest Edge",
+      "attributes": {
+        "time_of_day": "dusk",
+        "weather": "clear",
+        "ambient_sound": "light_wind"
+      },
+      "props": [
+        {"id": "prop-001", "name": "Large oak tree", "position": {"x": 0.2, "y": 0.5, "z": 0.0}},
+        {"id": "prop-002", "name": "Path", "position": {"x": 0.5, "y": 1.0, "z": 0.0}}
+      ]
+    },
+    {
+      "id": "effect-001",
+      "type": "effect",
+      "name": "Fog",
+      "start_time": 8.0,
+      "end_time": 15.5,
+      "intensity": 0.3,
+      "properties": {
+        "color": "#CCCCFF",
+        "movement": "slow_drift"
+      }
+    },
+    {
+      "id": "audio-001",
+      "type": "audio",
+      "name": "Ambient Forest Sounds",
+      "start_time": 0.0,
+      "end_time": 15.5,
+      "volume": 0.7,
+      "file_path": "assets/audio/ambient/forest_evening.mp3"
+    }
+  ],
+  "transitions": {
+    "in": {
+      "type": "fade",
+      "duration": 1.0
+    },
+    "out": {
+      "type": "fade",
+      "duration": 1.5
+    }
+  },
+  "camera": {
+    "initial_position": {"x": 0.5, "y": 0.6, "z": -5.0},
+    "movements": [
+      {
+        "start_time": 5.0,
+        "end_time": 10.0,
+        "start_position": {"x": 0.5, "y": 0.6, "z": -5.0},
+        "end_position": {"x": 0.5, "y": 0.6, "z": -3.0},
+        "ease": "ease-in-out"
+      }
+    ]
+  },
+  "metadata": {
+    "created_at": "2025-06-20T10:15:30Z",
+    "author": "Demo Creator",
+    "version": "1.0.0",
+    "tags": ["forest", "introduction", "mystery"]
+  }
+}
