@@ -1,0 +1,36 @@
+{
+  "validation_rules": {
+    "required_fields": ["id", "name", "duration", "elements"],
+    "allowed_element_types": ["character", "prop", "environment", "effect", "audio", "text"],
+    "max_elements_per_scene": 50,
+    "min_scene_duration": 1.0
+  },
+  "continuity_tracking": {
+    "enabled": true,
+    "track_characters": true,
+    "track_props": true,
+    "track_environments": true,
+    "track_across_scenes": true
+  },
+  "gemini_api": {
+    "use_gemini": true,
+    "model_name": "gemini-pro",
+    "temperature": 0.2,
+    "max_output_tokens": 1024,
+    "top_k": 40,
+    "top_p": 0.95
+  },
+  "reporting": {
+    "detail_level": "high",
+    "include_suggestions": true,
+    "format": "html",
+    "save_to_cloud": false,
+    "cloud_storage_path": "gs://your-bucket/validation-reports/"
+  },
+  "advanced": {
+    "cache_validation_results": true,
+    "cache_ttl_hours": 24,
+    "parallel_processing": true,
+    "max_workers": 4
+  }
+}
